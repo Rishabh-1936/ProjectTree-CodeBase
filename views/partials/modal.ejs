@@ -1,0 +1,209 @@
+<style>
+  #project-share-link{
+    pointer-events: none;
+    letter-spacing: 0.8px;
+  }
+  .project-share-icon-container a{
+    background-color: #4a4a4a;
+    color: white;
+    border-radius: 30%;
+    padding: 2%;
+    margin: 2%;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  .project-share-icon-container{
+    text-align: center;
+    margin-top: 1rem;
+  }
+  #project-share-link + h4{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    color:#4a4a4a;
+  }
+.project-share-icon-container a:hover{
+  opacity: 0.9;
+  box-shadow: 0px 1px 3px black;
+}
+.project-share-icon-container .fa-copy{
+  position:absolute;
+  top:0.5rem;
+  right:0%;
+  font-size: 1rem;;
+}
+.project-share-icon-container .fa-facebook-f{
+  background: #3B5998;
+}
+
+.project-share-icon-container .fa-twitter{
+  background: #55ACEE;
+}
+
+.project-share-icon-container .fa-whatsapp{
+  background: #03cf2f;
+}
+
+.project-share-icon-container .fa-reddit-alien{
+  background: #ff5700;
+}
+
+.project-share-icon-container .fa-linkedin-in{
+  background: #007bb5;
+}
+
+.project-share-icon-container .fa-telegram-plane{
+  background: #0070f0;
+}
+
+.project-share-icon-container .fa-pinterest-p{
+  background: #cb2027;
+}
+
+.project-share-icon-container .fa-google-plus-g{
+  background: #dd4b39;
+}
+
+.project-share-icon-container .fa-tumblr{
+  background: #2c4762;
+}
+.project-video{
+  position: relative;
+}
+.project-video-info h5{
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+  color: #47465d;
+}
+.project-video iframe,.loading-container{
+  width: 465px;
+  height: 250px;
+}
+
+.loading {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: wave;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: wave;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-duration: 1s;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-name: wave;
+  -moz-animation-timing-function: linear;
+  background: #dddddd;
+  background-image: -webkit-gradient(linear,  left center,  right center,  from(#dddddd),  color-stop(.2,  #f5f5f5),  color-stop(.4,  #e5e5e5),  to(#dddddd));
+  background-image: -webkit-linear-gradient(left,  #dddddd 0%,  #f5f5f5 20%,  #e5e5e5 40%,  #dddddd 100%);
+  background-image: -moz-gradient(linear,  left center,  right center,  from(#dddddd),  color-stop(.2,  #f5f5f5),  color-stop(.4,  #e5e5e5),  to(#dddddd));
+  background-image: -moz-linear-gradient(left,  #dddddd 0%,  #f5f5f5 20%, #e5e5e5 40%, #dddddd 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  height: 100%;
+  position: relative;
+}
+
+.project-video .loading-container{
+  position: absolute;
+}
+
+@keyframes wave {
+    0% {
+        background-position: -468px 0;
+      }
+    100% {
+        background-position: 468px 0;
+      }
+}
+
+
+@media (max-width: 576px){
+  .project-video iframe,.loading-container{
+    height: auto; 
+    width: -webkit-fill-available;
+  }
+}
+
+#no-data-for-getHelp-svg{
+  display: block;
+  width: 25vw;
+  height: 30vh;
+  margin: auto;
+}
+
+#carouselExampleCaptions .carousel-caption{
+  position: unset;
+  color: #47465d;
+}
+#carouselExampleCaptions .carousel-indicators li{
+  width: 10px;
+  height: 10px;
+  background-color:#47465d ;
+  border-radius: 50%;
+  border: none;
+}
+#carouselExampleCaptions img{
+  height: 330px;
+}
+#carouselExampleCaptions .carousel-caption h5{
+  font-weight: 600;
+}
+#carouselExampleCaptions .carousel-caption p{
+  font-size: 0.9rem;
+}
+
+.project-support-container{
+  display: flex;
+}
+.project-support-container div{
+  flex-direction: column;
+}
+.project-support-container div h6{
+  text-align: center;
+  font-size: 0.9rem;
+}
+.project-support-container div img{
+  height: 160px;
+}
+.project-support-container div a{
+  margin: 1rem 0rem;
+  padding: 0.2rem 0.4rem;
+}
+.project-support-container div:first-child{
+  border-right: 1px solid #dee2e6;
+}
+
+.submit_project{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+</style>
+   
+<!-- Modal -->
+<div class="modal fade" id="projectDataModal" tabindex="-1" aria-labelledby="dataModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dataModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  

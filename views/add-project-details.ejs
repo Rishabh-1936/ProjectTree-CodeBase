@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../public/css/add-project-details.css">
+
+</head>
+<body>
+    <%- include('partials/nav')%>
+
+    <div class="container add-container">
+        <h2>Add project details</h2>
+        <form action="/add-project-details" method="post">
+            <div class="input-box">
+                <input type="text" name="projectId" id="projectId" required>
+                <span>Project Id</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectName" id="projectName" required>
+                <span>Project Name</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectDescUrl" id="projectDescUrl" required>
+                <span>Description Url</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectVideoUrl" id="projectVideoUrl" required>
+                <span>Video Url</span>
+            </div>
+            <div class="input-box">
+                <input type="number" name="projectDownloads" id="projectDownloads" required>
+                <span>Downloads</span>
+            </div>
+            <div class="input-box">
+                <input type="number" name="projectLikes" id="projectLikes" required>
+                <span>Likes</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectTags" id="projectTags" required>
+                <span>Tags</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectLang" id="projectLang" required>
+                <span>Language</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectShare" id="projectShare" required>
+                <span>Share Link</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectHelp" id="projectHelp" required>
+                <span>Project Help</span>
+            </div>
+            <div class="input-box">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+<%- include('partials/footer') %>

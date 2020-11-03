@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="https://familytreeprojecthawaii.com/uploads/3/4/9/6/34968446/header_images/1445770565.jpg" width="30"
+            height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        ProjectTree
+    </a>
+    <svg class="ham hamRotate ham8 navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" viewBox="0 0 100 100" width="40" onclick="this.classList.toggle('active')">
+        <path class="line top"
+            d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+        <path class="line middle" d="m 30,50 h 40" />
+        <path class="line bottom"
+            d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+    </svg>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown nav-dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Language
+                </a>
+                <div class="dropdown-menu nav-dropdown-menu" aria-labelledby="navbarDropdown">
+                    
+                    <% projectCategory.forEach((project)=>{ %>
+                        <a class="dropdown-item" href="#"><%= project.lang %></a>
+                    <% }) %>
+                    
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="openModal('submitProject',[''])" data-toggle="modal" data-target="#projectDataModal">Submit Project</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="openModal('support',[''])" data-toggle="modal" data-target="#projectDataModal">Support</a>
+            </li>
+        </ul>
+        <div class="searchBar">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+
+    </div>
+</nav>

@@ -1,0 +1,60 @@
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-about">
+            <h2>About</h2>
+            <p>
+                ProjectTree is developed to provide beginners with tutorials, source code, and projects
+                to build their technical knowledge and exchange ideas. We hope to provide students with interesting
+                and relevant downloadable open source projects for free. Visit us to join our Source Code Projects
+                organization.
+            </p>
+        </div>
+        <hr class="footer-style-two">
+        <div class="footer-link">
+            <h2>Quick Links</h2>
+            <ul>
+                <li>Home</li>
+                <li class="dropdown dropright footer-dropdown">
+                    <a class="dropdown-toggle" href="#" id="footerDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu footer-dropdown-menu" aria-labelledby="footerDropdown">
+                        
+                        <%projectCategory.forEach((project)=>{%>
+                            <a class="dropdown-item" href="#"><%=project.lang%></a>
+                        <%})%>
+                        
+                    </div>
+                </li>
+                <li>Submit project</li>
+            </ul>
+        </div>
+    </div>
+    <hr class="footer-style-one">
+    <div class="flex footer-bottom">
+        <div class="footer-text">
+            <p>
+                Copyright &#169; 2020 All Rights Reserved by ProjectTree
+            </p>
+        </div>
+        <div class="flex footer-icons">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-linkedin-in"></i>
+        </div>
+    </div>
+    <div class="footer-img">
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+crossorigin="anonymous"></script>

@@ -1,0 +1,108 @@
+<%- include('partials/header',{project_Category: projectLists}) %>
+
+<div class="container project-container">
+  <div class="projects">
+
+    <% projectLists.forEach((projectList)=>{ %>
+  
+      <div class="project-category">
+        <div class="project-header">
+          <a class="btn btn-primary" data-toggle="collapse" href="#<%= projectList.lang %>" role="button" aria-expanded="true"
+            aria-controls="collapseExample"> 
+            <%= projectList.lang %>
+          </a>
+        </div>
+        <div class="project-category-container">
+
+          <% (projectList.projectlists).forEach((projectData)=>{ %>
+            
+            <div class="project-list">
+              <div class="collapse show" id="<%= projectList.lang %>">
+                <div class="item">
+                  <% let projectName = projectData.projectName %>
+                  <% let projectVideoUrl = projectData.projectVideoUrl %>
+                  <p class="project-heading"><%= projectName %></p>
+                  
+                  <div class="flex project-icons icons-display icon-positioning">
+
+                    <a href="">
+                        <i class="fa fa-heart" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
+                            <span class="badge badge-light"><%= projectData.likes %></span></i>
+                    </a>
+                    <a href="" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
+                        <i class="fab fa-youtube" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
+                    </a>                                  
+                    <a target="_blank" href="/projects/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
+                        <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
+                            <span class="badge badge-light"><%= projectData.downloads %></span></i>
+                    </a>
+                    <a href="" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
+                      <i class="fas fa-code" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Get Help</div>"></i>
+                    </a>
+                    <a href="" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
+                        <i class="fa fa-share-alt" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Share</div>"></i>
+                    </a>
+                  
+                  </div>
+                
+                  <div class="dropdown icon-positioning dropleft dropdown-icon">
+                    
+                    <i class="fa fa-ellipsis-v" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false"></i>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+                      <a class="dropdown-item" href="">
+                        <i class="fa fa-heart" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
+                            <span class="badge badge-light"><%= projectData.likes %></span></i>
+                    </a>
+                    <a href="" class="dropdown-item" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
+                        <i class="fab fa-youtube" href="#" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
+                    </a>                                  
+                    <a class="dropdown-item" target="_blank" href="/projects/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
+                        <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
+                            <span class="badge badge-light"><%= projectData.downloads %></span></i>
+                    </a>
+                    <a class="dropdown-item" href="" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
+                      <i class="fas fa-code" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Get Help</div>"></i>
+                    </a>
+                    <a href="" class="dropdown-item" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
+                        <i class="fa fa-share-alt" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Share</div>"></i>
+                    </a>
+                    </div>
+                  </div>
+    
+                  <div class="project-tags">
+                    
+                    <% (projectData.tags).forEach((tag)=>{ %>
+                      <a class="btn" href=""><%= tag %></a>
+                    <% }) %>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          <% }) %>
+
+        </div>
+
+        <div class="more-project-link">
+          <div class="left-border"></div>
+          <div class="bottom-border"></div>
+          <a href="/projects/<%= projectList.lang %>"> More <%= projectList.lang %> Projects</a>
+        </div>
+
+      </div> <!-- project-category Div End -->
+
+    <% }) %>
+
+  </div> <!-- Project Div End -->
+</div> <!-- Container Div End -->
+
+<%- include ('partials/modal') %>
+
+<%- include('partials/footer',{projectCategory: projectLists}) %>
+
+<script src="../public/js/home.js"></script>
+<%- include('partials/closing') %>

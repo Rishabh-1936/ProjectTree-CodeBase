@@ -1,0 +1,61 @@
+<%- include('partials/header',{project_Category: langs}) %>
+<link rel="stylesheet" href="../public/css/style.css">
+<div class="container project-view-container">
+  
+    <iframe width="560" height="315" src="<%= project[0].projectVideoUrl%>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h1><%= project[0].projectName %></h1>
+  
+    <figure class="projectVideo-container">
+        
+        <div class="projectVideo-video"></div>
+
+        <div class="projectVideo-info-container">
+            <div class="projectVideo-info">
+                
+                <figcaption><%= project[0].tags %></figcaption>
+                <div class="projectVideo-info-icons">
+                    <i class="fa fa-arrow-alt-circle-down"></i>
+                    <i class="fa fa-heart"></i>
+                </div>
+            </div>
+            <div class="projectVideo-share-icons">
+                <i class="fa fa-share-alt"></i>
+                <i class="fas fa-code"></i>
+            </div>
+        </div>
+    </figure>
+    <div class="project-view-content">
+
+    </div>
+</div>
+
+
+<%- include('partials/footer',{projectCategory: langs}) %>
+
+
+<!-- <script defer src="../public/js/project-view.js"></script> -->
+
+
+
+<script defer>
+    $(document).ready(()=>{
+        (async()=>{
+            let d1=await fetch("<%= project[0]['projectDescUrl'] %>");
+            $('.project-view-content')[0].innerHTML=await d1.text();
+            console.log('2')
+        })();
+        
+        // var iframe = document.createElement('iframe');
+        // iframe.style.display = "block";
+        // iframe.style.width = "560px";
+        // iframe.style.height = "315px";        
+        // iframe.src = '<%= project[0].projectVideoUrl %>';
+        // document.body.appendChild(iframe);
+    });
+    
+
+</script>
+
+
+
+<%- include('partials/closing') %>
