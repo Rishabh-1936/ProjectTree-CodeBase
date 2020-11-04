@@ -35,6 +35,23 @@ route.get('/:lang/pid/:id',(req,res)=>{
     });
 });
 
+route.get('/:lang/pid/:id/download',(req,res)=>{
+    projectModel.find({'projectId':req.params.id},(err,project)=>{
+        if(err){
+            console.log(err);
+            throw err;
+        }
+        else{
+            projectLang.find()
+            .select('lang')
+            .exec((err,langs)=>{
+                res.render('project-download-view',{'langs':langs,'project':project})
+                // console.log(`Projects of lang is listed`,langs);
+            });
+        }
+    });
+});
+
 // route.get('/:lang/page/:pgno',(req,res)=>{
 //     projectLang.find({'lang':req.params.lang},{projectlists:{$slice: 1}})
 //     .populate('projectlists')
