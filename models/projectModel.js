@@ -10,6 +10,7 @@ const projectSchema = mongoose.Schema({
     projectName : String,
     projectDescUrl : String,
     projectVideoUrl : String,
+    projectDownloadUrl : String,
     downloads : {
         type:Number,
         validate:{
