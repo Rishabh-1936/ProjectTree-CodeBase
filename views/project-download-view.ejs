@@ -1,0 +1,25 @@
+<%- include('partials/header',{project_Category: langs}) %>
+
+
+<button id="btn">
+    click me to download
+</button>
+
+
+<%- include ('partials/modal') %>
+
+<%- include('partials/footer',{projectCategory: langs}) %>
+
+<script type="text/javascript" src="../../../../public/js/project-view.js"></script>
+<script type="text/javascript" src="../../../../public/js/FileSaver.min.js"></script>
+<script type="text/javascript" src="../../../../public/js/jszip.min.js"></script>
+<script type="text/javascript" src="../../../../public/js/API.js"></script>
+
+
+<script>
+    $('#btn').on('click',(e)=>{
+        GitZip.zipRepo("https://github.com/KinoLien/gitzip");
+    });
+</script>
+
+<%- include('partials/closing') %>

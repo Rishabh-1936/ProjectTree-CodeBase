@@ -60,50 +60,50 @@ h2{
     margin-left: 1rem;
 }
 
-  .content{
-      background: #63c56761;
-  }
-  .project-header>.btn-primary{
-      color: #fff;
-      background-color: #007bff8c;
-      border-color: #007bff;
-      padding: 0;
-      width: 4rem;
-  }
-  .project-list{
-    background: #fdfdfdf2;
-    /* border-radius: 0.25rem;
-    border: 1px solid #cccccc; */
-    margin: 1rem 0rem;
-  }
-  .item{
-    border-radius: 0.25rem;
-    border: 1px solid #cccccc;
-    padding: 0.5rem;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    grid-template-areas: "project-heading icon-positioning"
-                         "project-tags icon-positioning";
-  }
-  .item p{
-    margin-bottom: 0rem;
-    font-size: clamp(1rem,2.8vw,1.4rem);
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
-    letter-spacing: 0.05rem;
-  }
-  
-  .project-heading{
-    grid-area: project-heading;
-  }
-  .icon-positioning{
-    grid-area: icon-positioning;
-  }
-  .icon-positioning > a{
-    text-decoration: none;
-  }
+.content{
+    background: #63c56761;
+}
+.project-header>.btn-primary{
+    color: #fff;
+  background-color: #007bff8c;
+  border-color: #007bff;
+  padding: 0;
+  width: 4rem;
+}
+.project-list{
+  background: #fdfdfdf2;
+  /* border-radius: 0.25rem;
+  border: 1px solid #cccccc; */
+  margin: 1rem 0rem;
+}
+.item{
+  border-radius: 0.25rem;
+  border: 1px solid #cccccc;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-areas: "project-heading icon-positioning"
+                       "project-tags icon-positioning";
+}
+.item p{
+  margin-bottom: 0rem;
+  font-size: clamp(1rem,2.8vw,1.4rem);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  letter-spacing: 0.05rem;
+}
+
+.project-heading{
+  grid-area: project-heading;
+}
+.icon-positioning{
+  grid-area: icon-positioning;
+}
+.icon-positioning > a{
+  text-decoration: none;
+}
   
 .icon-positioning i:hover{
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -143,13 +143,13 @@ h2{
   
   .dropdown-icon .dropdown-item .badge{
     position: absolute;
-    bottom: 1.6vw;
-    left: 1.7vw;
+    left: 75%;
+    bottom: 70%;
     font-size: 50%;
   }
   .dropdown-item.active, .dropdown-item:active {
     background-color: #f3f3f3;
-}
+  }
   
   .project-tags{
     grid-area: project-tags;
@@ -186,7 +186,7 @@ h2{
     border-radius: 50%;
   }
   .clicked{
-    color:rgb(255 63 63)!important;
+    color:rgb(255 40 40)!important;
     /* animation:clicked 1s ease;
     transform: scale(1); */
   }
@@ -303,6 +303,142 @@ h2{
 /* *********************** End of Styling the Download Page *********************** */
 
 
+/* ----------------------- Styling the lazy-loading of video----------------------- */
+.project-video{
+  position: relative;
+}
+.project-video-info h5{
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+  color: #47465d;
+}
+.project-video iframe,.loading-container{
+  width: 465px;
+  height: 250px;
+}
+.loading {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: wave;
+  animation-timing-function: linear;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: wave;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-duration: 1s;
+  -moz-animation-fill-mode: forwards;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-name: wave;
+  -moz-animation-timing-function: linear;
+  background: #dddddd;
+  background-image: -webkit-gradient(linear,  left center,  right center,  from(#dddddd),  color-stop(.2,  #f5f5f5),  color-stop(.4,  #e5e5e5),  to(#dddddd));
+  background-image: -webkit-linear-gradient(left,  #dddddd 0%,  #f5f5f5 20%,  #e5e5e5 40%,  #dddddd 100%);
+  background-image: -moz-gradient(linear,  left center,  right center,  from(#dddddd),  color-stop(.2,  #f5f5f5),  color-stop(.4,  #e5e5e5),  to(#dddddd));
+  background-image: -moz-linear-gradient(left,  #dddddd 0%,  #f5f5f5 20%, #e5e5e5 40%, #dddddd 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  height: 100%;
+  position: relative;
+}
+
+@keyframes wave {
+    0% {
+        background-position: -468px 0;
+      }
+    100% {
+        background-position: 468px 0;
+      }
+}
+
+/* -----------------------End Styling the lazy-loading of video----------------------- */
+
+
+/* -----------------------Styling the project-view----------------------- */
+
+.project-view-container h1{
+  text-align: justify;
+  font-size: 2rem;
+  width: fit-content;
+  margin: 2rem auto;
+}
+
+.project-view-container .project-video{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-view-content{
+  width: 70%;
+  margin: auto;
+  text-align: justify;
+}
+
+.project-view-info{
+  justify-content: space-between;
+  width: 70%;
+  margin: 1rem;
+}
+
+.project-view-icons a i{
+  position: relative;
+}
+
+.project-view-icons a{
+  margin:0px 5px;
+}
+
+.project-view-icons .badge{
+  position: absolute;
+  left: 75%;
+  bottom: 70%;
+  font-size: 50%;
+}
+
+.project-view-icons .badge-light{
+  background-color: #FF5722;
+  color: white;
+}
+
+.project-video .loading-container{
+  position: absolute;
+}
+
+.project-view-container .project-view-embed{
+  width: 70%;
+  margin: auto;
+}
+
+.project-view-container .loading-container{
+  width: 70%;
+  margin: auto;
+  height: 100%;
+}
+
+.download-button-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 3rem 0rem;
+}
+
+@media (max-width:768px){
+  .project-view-container .loading-container,.project-view-container .project-view-embed,.project-view-info{
+    width: 80%;
+  }
+  .project-view-container h1{
+    font-size: 1.5rem;
+  }
+  .project-view-content{
+    width: 80%;
+  }
+}
+
+/* -----------------------End Styling the project-view----------------------- */
 
 
 /* ----------------------- Styling the Footer ----------------------- */
