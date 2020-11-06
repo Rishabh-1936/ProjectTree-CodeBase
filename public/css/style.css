@@ -226,13 +226,13 @@ h2{
 .timer-ads{    
     width: -webkit-fill-available;
 }
-
+/* 
 .download-create-link{
     display: block;
 }
 .download-button{
     display: none;
-}
+} */
 
 .timer > svg,.timer-count{
     position: absolute;
@@ -273,12 +273,29 @@ h2{
     stroke-linejoin: bevel;
     animation: dash 30s linear forwards;
 }
-  
+
+.download-loader {
+  border: 4px solid #f8f8f8;
+  border-top: 4px solid #5ca7da;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  margin-left: 10px;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @keyframes dash {
 
     to {
         stroke-dashoffset: 0%;
         stroke-opacity: 1;
+        stroke-dasharray: 0;
     }
 }
 
