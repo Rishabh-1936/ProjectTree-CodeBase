@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <%- include('partials/nav')%>
+    <%- include('partials/nav',{projectCategory:[{lang:'C++'},{lang:'Web'}]})%>
 
     <div class="container add-container">
         <h2>Add project details</h2>
@@ -32,6 +32,10 @@
             <div class="input-box">
                 <input type="text" name="projectVideoUrl" id="projectVideoUrl" required>
                 <span>Video Url</span>
+            </div>
+            <div class="input-box">
+                <input type="text" name="projectDownloadUrl" id="projectDownloadUrl" required>
+                <span>Download Url</span>
             </div>
             <div class="input-box">
                 <input type="number" name="projectDownloads" id="projectDownloads" required>
@@ -62,5 +66,30 @@
             </div>
         </form>
     </div>
+    
+<%- include('partials/footer',{projectCategory:[{lang:'C++'},{lang:'Web'}]}) %>
 
-<%- include('partials/footer') %>
+
+<script>
+    function projectIdCal(){
+        let arr=[]
+        var todos = <%-JSON.stringify(projectIds)%>;
+        for (var item of todos) {
+            arr.push(item.projectId)
+            console.log(item.projectId)
+        }
+        return arr;
+    }
+    $(document).ready(()=>{
+        let arr=projectIdCal()
+        let suggestion=$('#projectId + span').text()+" last value "+arr[arr.length-1]
+        $('#projectId').on('input',(e)=>{
+            $('#projectId + span').text(suggestion)
+            if(arr.includes(e.target.value)==true){
+                $('#projectId + span').css('color','red')
+            }else{
+                $('#projectId + span').css('color','green')
+            }
+        })
+    });
+</script>
