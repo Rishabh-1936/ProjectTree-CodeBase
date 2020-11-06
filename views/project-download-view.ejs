@@ -1,9 +1,35 @@
 <%- include('partials/header',{project_Category: langs}) %>
 
+<link rel="stylesheet" href="../../../../public/css/style.css">
 
-<button id="btn">
-    click me to download
-</button>
+<div class="download-container flex">
+
+    <div class="download-content flex">
+        <h2 class="text-center">Thanks For Visiting Our Site.</h2>
+        <h4>The Project will get downloaded within a short while.</h4>
+
+        <div class="timer-ads flex">
+            <div class="ads"></div>
+            <div class="timer flex">
+                <svg height="140" width="140">
+                    <circle cx="70" cy="70" r="60" />
+                </svg>
+                <div class="timer-count flex">
+                    <span class="timer-count-time">30</span>
+                    <span class="timer-count-unit">sec</span>
+                </div>
+            </div>
+            <div class="ads"></div>
+        </div>
+    </div>
+    <div class="download-button-div flex mb-5">
+        <a href="javascript:void(0);" class="download-button flex btn btn-secondary disabled" onclick="downloadProject('<%= project[0].projectDownloadUrl %>')" tabindex="-1" role="button"
+            aria-disabled="true">
+            Download
+            <div class="download-loader"></div>
+        </a>
+    </div>
+</div>
 
 
 <%- include ('partials/modal') %>
@@ -15,10 +41,36 @@
 <script type="text/javascript" src="../../../../public/js/jszip.min.js"></script>
 <script type="text/javascript" src="../../../../public/js/API.js"></script>
 
-
 <script>
-    $('#btn').on('click',(e)=>{
-        GitZip.zipRepo("https://github.com/KinoLien/gitzip");
+    
+    function downloadProject(url){
+        console.log(GitZip.zipRepo(url));
+    }
+
+    $(document).ready(() => {
+
+        let val = 30;
+        let timeout =
+            setInterval(() => {
+                $(".timer-count-time").html(--val);
+                if (val == 0) {
+                    $(".download-button").toggleClass("disabled").toggleClass("btn-primary").toggleClass("btn-secondary");
+                    clearInterval(timeout);
+                }
+            }, 1000);
+
+        $('.download-button').on('click',()=>{
+            $('.download-loader').css('display','block')
+            let fadeOutTime=3;
+            let fadeOut=
+                setInterval(()=>{
+                    --fadeOutTime;                    
+                    if(fadeOutTime <= 0){
+                        $('.download-loader').css('display','none')
+                        clearInterval(fadeOut);
+                    }
+                },1000);
+        })
     });
 </script>
 
