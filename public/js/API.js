@@ -91,7 +91,7 @@ var _global = typeof window === 'object' && window.window === window
                                 });
                             }
                             xhr.send();
-                            if(xhr.status == 200){return xhr.response;}
+                            if(xhr.status == 200) return xhr.response;
                             return { status: xhr.status, statusText: xhr.statusText };
                         }
                         onmessage = function(e){
