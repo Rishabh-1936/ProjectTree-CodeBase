@@ -2,8 +2,18 @@ const route=require('express').Router();
 const projectModel=require('../models/projectModel');
 const projectLang=require('../models/projectLang');
 
-route.get('/',(req,res)=>{
-    res.render('add-project-details');
+route.get('/',(req,res)=>{  
+    projectModel.find({})
+    .select('projectId')
+    .exec((err,projectIds)=>{
+        if(err){
+            console.log('Error in fetching',err);
+            return res.redirect('/');
+        }
+        else{
+            res.render('add-project-details',{projectIds:projectIds});
+        }
+    });
 });
 
 route.post('/',(req,res)=>{
@@ -44,6 +54,7 @@ function dataFetch(req){
         projectName : req.body.projectName,
         projectDescUrl : req.body.projectDescUrl,
         projectVideoUrl : req.body.projectVideoUrl,
+        projectDownloadUrl : req.body.projectDownloadUrl,
         downloads : req.body.projectDownloads,
         likes : req.body.projectLikes,
         tags : (req.body.projectTags).split(","),
