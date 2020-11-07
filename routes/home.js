@@ -13,7 +13,7 @@ route.get('/',(req,res)=>{
            console.log("Error occurred");
        }
        else{
-           console.log("Fetch successfully ",projects);
+        //    console.log("Fetch successfully ",projects);
            res.render('home',{projectLists:projects});
        }
     });

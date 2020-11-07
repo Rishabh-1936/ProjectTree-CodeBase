@@ -3,6 +3,8 @@ const route=require('express').Router();
 const projectModel=require('../models/projectModel');
 const projectLang=require('../models/projectLang');
 
+let lang_obj={};
+
 route.get('/:lang',(req,res)=>{
     projectLang.find({'lang':req.params.lang})
     .populate('projectlists')
@@ -12,8 +14,13 @@ route.get('/:lang',(req,res)=>{
             throw err;
         }
         else{
-            console.log(`Projects of lang  ${req.params.lang} is listed`);
-            return res.render('project-list',{projectLists:projects});
+            projectLang.find()
+            .select('lang')
+            .exec((err,langs)=>{
+                lang_obj=langs;
+                res.render('project-list',{'langs':langs,'projectLists':projects});
+                // console.log(`Projects of lang is listed`,langs);
+            });
         }
     });
 });
@@ -25,12 +32,7 @@ route.get('/:lang/pid/:id',(req,res)=>{
             throw err;
         }
         else{
-            projectLang.find()
-            .select('lang')
-            .exec((err,langs)=>{
-                res.render('project-view',{'langs':langs,'project':project})
-                // console.log(`Projects of lang is listed`,langs);
-            });
+            res.render('project-view',{'langs':lang_obj,'project':project})
         }
     });
 });
@@ -42,12 +44,7 @@ route.get('/:lang/pid/:id/download',(req,res)=>{
             throw err;
         }
         else{
-            projectLang.find()
-            .select('lang')
-            .exec((err,langs)=>{
-                res.render('project-download-view',{'langs':langs,'project':project})
-                // console.log(`Projects of lang is listed`,langs);
-            });
+            res.render('project-download-view',{'langs':lang_obj,'project':project})
         }
     });
 });

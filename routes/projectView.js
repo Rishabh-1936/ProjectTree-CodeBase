@@ -16,8 +16,5 @@ route.get('/:id',(req,res)=>{
     });
 });
 
-route.get('/:id/download',(err,download)=>{
-    res.send('Downloading');
-});
 
 module.exports=route;
