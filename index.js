@@ -10,7 +10,12 @@ app.use(bodyParser.json());
 app.set("view engine","ejs");
 app.use("/public",express.static(__dirname+"/public"))
 
-mongoose.set('useFindAndModify',false);
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
+
+
 mongoose.connect(process.env.MONGO_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }, err => {
         console.log('database connected');
