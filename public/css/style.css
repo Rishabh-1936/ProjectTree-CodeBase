@@ -413,6 +413,7 @@ h2{
   left: 75%;
   bottom: 70%;
   font-size: 50%;
+  pointer-events: none;
 }
 
 .project-view-icons .badge-light{
