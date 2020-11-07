@@ -146,6 +146,7 @@ h2{
     left: 75%;
     bottom: 70%;
     font-size: 50%;
+    pointer-events: none;
   }
   .dropdown-item.active, .dropdown-item:active {
     background-color: #f3f3f3;
@@ -184,6 +185,7 @@ h2{
     bottom: 1vw;
     left: 1.25vw;
     border-radius: 50%;
+    pointer-events: none;
   }
   .clicked{
     color:rgb(255 40 40)!important;
