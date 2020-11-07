@@ -19,6 +19,38 @@ $(document).ready(() => {
     });
 });
 
+function like_the_project(id, ref) {
+    
+    let val = 1 , status = "like" ;
+
+    if( $(ref).hasClass('clicked') ){
+        status = "unlike";
+        val = -1 ; 
+    }  
+    else{    
+        status = "like" ;
+        val = 1 ;
+    }
+
+    $.ajax({
+        global: false,
+        type: 'POST',
+        url: `/${id}/like`,
+        dataType:'json',
+        data: {
+            id : id,
+            status : status,
+            val : val
+        },
+        success: function (result) {
+            console.log('success',result);
+        },
+        error: function (request, status, error) {
+            console.log('error',error);
+        }
+    });
+}
+
 function openModal(type, data) {
     let modal_title = ``, modal_body = ``;
     modal_title = `${data[0]}`
