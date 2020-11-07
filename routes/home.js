@@ -19,4 +19,13 @@ route.get('/',(req,res)=>{
     });
 });
 
+route.post('/:id/like',(req,res)=>{
+    
+    projectModel.findOneAndUpdate({'projectId':req.params.id},{$inc:{'likes':req.body.val}})
+    .exec((err,project)=>{
+        // console.log('Like -> ',project)
+        // console.log(req.body.status)
+    })
+})
+
 module.exports=route;
