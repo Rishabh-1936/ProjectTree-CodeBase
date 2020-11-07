@@ -26,21 +26,21 @@
                   
                   <div class="flex project-icons icons-display icon-positioning">
 
-                    <a href="">
-                        <i class="fa fa-heart" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-heart" onclick="like_the_project('<%= projectData.projectId %>',this)" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
                             <span class="badge badge-light"><%= projectData.likes %></span></i>
                     </a>
-                    <a target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
+                    <a href="javascript:void(0);" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fab fa-youtube" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
                     </a>                                  
                     <a target="_blank" href="/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
                         <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
                             <span class="badge badge-light"><%= projectData.downloads %></span></i>
                     </a>
-                    <a href="" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
+                    <a href="javascript:void(0);" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
                       <i class="fas fa-code" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Get Help</div>"></i>
                     </a>
-                    <a href="" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
+                    <a href="javascript:void(0);" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fa fa-share-alt" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Share</div>"></i>
                     </a>
                   
@@ -52,30 +52,30 @@
                       aria-haspopup="true" aria-expanded="false"></i>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 
-                      <a href="" class="dropdown-item">
-                        <i class="fa fa-heart" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
+                      <a class="dropdown-item" href="javascript:void(0);">
+                        <i class="fa fa-heart" onclick="like_the_project('<%= projectData.projectId %>',this)"javascript:void(0); data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
                             <span class="badge badge-light"><%= projectData.likes %></span></i>
-                    </a>
-                    <a href="" class="dropdown-item" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0);" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fab fa-youtube" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
-                    </a>                                  
-                    <a class="dropdown-item" target="_blank" href="/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
+                      </a>                                  
+                      <a class="dropdown-item" target="_blank" href="/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
                         <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
                             <span class="badge badge-light"><%= projectData.downloads %></span></i>
-                    </a>
-                    <a class="dropdown-item" href="" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
-                      <i class="fas fa-code" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Get Help</div>"></i>
-                    </a>
-                    <a href="" class="dropdown-item" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0);" onclick="openModal('getHelp',['<%= projectName %>','<%= projectData.share %>','<%= projectData.projectId %>','<%= projectData.getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
+                        <i class="fas fa-code" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Get Help</div>"></i>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0);" onclick="openModal('share',['<%= projectName %>','<%= projectData.share %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fa fa-share-alt" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Share</div>"></i>
-                    </a>
+                      </a>
                     </div>
                   </div>
     
                   <div class="project-tags">
                     
                     <% (projectData.tags).forEach((tag)=>{ %>
-                      <a class="btn" href=""><%= tag %></a>
+                      <a class="btn" href="javascript:void(0);"><%= tag %></a>
                     <% }) %>
 
                   </div>

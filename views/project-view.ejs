@@ -20,14 +20,14 @@
             <div class="project-tags">
                     
                 <% (project[0].tags).forEach((tag)=>{ %>
-                  <a class="btn" href=""><%= tag %></a>
+                  <a class="btn" href="javascript:void(0);"><%= tag %></a>
                 <% }) %>
 
               </div>
               <div class="flex project-view-icons">
 
                 <a href="javascript:void(0);">
-                    <i class="fa fa-heart" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
+                    <i class="fa fa-heart" onclick="like_the_project('<%= projectData.projectId %>',this)" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Like</div>">
                         <span class="badge badge-light"><%= project[0].likes %></span></i>
                 </a>
                 <a href="javascript:void(0);" onclick="openModal('getHelp',['<%= project[0].projectName %>','<%= project[0].share %>','<%= project[0].projectId %>','<%= project[0].getHelp %>'])" data-toggle="modal" data-target="#projectDataModal">
@@ -48,10 +48,6 @@
     <div class="download-button-container">
         <div class="ads"></div>
         <a type="button" class="btn btn-primary" href="/projects/<%= project[0].lang %>/pid/<%= project[0].projectId %>/download">DOWNLOAD</a>
-
-        <!-- <div class="download-button">
-            <a type="button" class="btn btn-primary" href="/projects/<%= project[0].lang %>/pid/<%= project[0].projectId %>/download">DOWNLOAD</a>
-        </div> -->
         <div class="ads"></div>
     </div>
     
