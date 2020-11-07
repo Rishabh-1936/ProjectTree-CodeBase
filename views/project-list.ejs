@@ -1,4 +1,4 @@
-<%- include('partials/header',{project_Category: projectLists}) %>
+<%- include('partials/header',{project_Category: langs}) %>
 
 <div class="container project-container">
   <div class="projects">
@@ -33,7 +33,7 @@
                     <a href="javascript:void(0);" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fab fa-youtube" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
                     </a>                                  
-                    <a target="_blank" href="/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
+                    <a target="_blank" href="/projects/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
                         <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
                             <span class="badge badge-light"><%= projectData.downloads %></span></i>
                     </a>
@@ -59,7 +59,7 @@
                       <a class="dropdown-item" href="javascript:void(0);" target="_blank" onclick="openModal('youtube',['<%= projectName %>','<%= projectVideoUrl %>'])" data-toggle="modal" data-target="#projectDataModal">
                         <i class="fab fa-youtube" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>YouTube</div>"></i>
                       </a>                                  
-                      <a class="dropdown-item" target="_blank" href="/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
+                      <a class="dropdown-item" target="_blank" href="/projects/<%= projectData.lang %>/pid/<%= projectData.projectId %>">
                         <i class="fa fa-arrow-alt-circle-down" data-toggle="tooltip" data-html="true" data-placement="bottom" title="<div class='tooltip-text'>Download</div>">
                             <span class="badge badge-light"><%= projectData.downloads %></span></i>
                       </a>
@@ -103,7 +103,7 @@
 
 <%- include ('partials/modal') %>
 
-<%- include('partials/footer',{projectCategory: projectLists}) %>
+<%- include('partials/footer',{projectCategory: lang}) %>
 
 <script src="../public/js/home.js"></script>
 <%- include('partials/closing') %>

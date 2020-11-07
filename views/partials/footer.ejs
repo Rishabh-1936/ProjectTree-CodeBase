@@ -23,7 +23,7 @@
                     <div class="dropdown-menu footer-dropdown-menu" aria-labelledby="footerDropdown">
                         
                         <%projectCategory.forEach((project)=>{%>
-                            <a class="dropdown-item" href="#"><%=project.lang%></a>
+                            <a class="dropdown-item" href="/projects/<%= project.lang %>"><%=project.lang%></a>
                         <%})%>
                         
                     </div>
