@@ -19,6 +19,25 @@ route.get('/',(req,res)=>{
     });
 });
 
+route.get('/about',(req,res)=>{
+    projectLang
+        .find({})
+        .select('lang')
+        .exec((err,langs)=>{
+            res.render('about', { 'projectLists': langs })
+        });
+});
+
+route.get('/contact',(req,res)=>{
+    projectLang
+    .find({})
+    .select('lang')
+    .exec((err,langs)=>{
+        res.render('contact', { 'projectLists': langs })
+    });
+});
+
+
 route.post('/:id/like',(req,res)=>{
     
     projectModel.findOneAndUpdate({'projectId':req.params.id},{$inc:{'likes':req.body.val}})
