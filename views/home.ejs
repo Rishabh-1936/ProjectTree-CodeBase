@@ -21,7 +21,11 @@
                 <div class="item">
                   <% let projectName = projectData.projectName %>
                   <% let projectVideoUrl = projectData.projectVideoUrl %>
-                  <p class="project-heading"><%= projectName %></p>
+                  <p class="project-heading">
+                    <a href="/projects/<%= projectData.lang %>/pid/<%= projectData.projectId %>" target="_blank" rel="noopener noreferrer">
+                      <%= projectName %>
+                    </a>
+                  </p>
                   
                   <div class="flex project-icons icons-display icon-positioning">
 
