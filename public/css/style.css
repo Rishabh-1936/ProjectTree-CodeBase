@@ -94,6 +94,14 @@ h2{
   overflow: hidden;
   letter-spacing: 0.05rem;
 }
+.project-heading > a{
+  text-decoration: none;
+  color: #4a4a4a;
+}
+.project-heading > a:hover{
+  text-decoration: underline;
+  color: #4a4a4a;
+}
 
 .project-heading{
   grid-area: project-heading;
