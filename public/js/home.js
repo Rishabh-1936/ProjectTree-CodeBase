@@ -288,7 +288,7 @@ function submit_project() {
     html = `
         <div class="submit_project">
             <img src="./public/images/mail_project.png" class="d-block w-100" alt="Submit Your Project">
-            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=rishabhjain.1936@yahoo.com&su=Want to submit the project&body=Project details and your details" target="_blank" style="text-decoration: underline;color: #007bff;">Mail Us</a> the project details.</p>
+            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=projecttree.official@gmail.com&su=Want to submit the project&body=Project details and your details" target="_blank" style="text-decoration: underline;color: #007bff;">Mail Us</a> the project details.</p>
         <div>
     `
     return html;
