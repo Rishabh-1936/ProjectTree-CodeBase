@@ -47,6 +47,53 @@ h2{
 /* *********************** End of Styling the NavBar *********************** */
 
 
+/* ----------------------- Styling the Search Bar --------------------------- */
+
+.searchBar{
+  justify-content: flex-end;
+}
+
+.searchBar > input[type="search"]{
+  border: 1px solid #fafafb;
+  border-radius: 2px;
+  visibility: hidden;
+  width: 0%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 0.5rem;
+}
+
+.searchBar > input[type="search"]:focus{
+  outline: none;
+}
+
+.search-icon{
+  height: 26px;
+  display: flex;
+  background-color: transparent;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+#search-button{
+  color: #fafafb;
+  padding:0.1rem;
+}
+
+.show-searchBar{
+  animation: showSearchBar 2s ease forwards;
+}
+
+@keyframes showSearchBar {
+  to{
+      width: 80%;
+      visibility: visible;
+  }
+}
+
+/* *********************** End of Styling the Search Bar *********************** */
+
+
 /* ----------------------- Styling the Home Page ----------------------- */
 
 .project-container{
@@ -89,18 +136,20 @@ h2{
   margin-bottom: 0rem;
   font-size: clamp(1rem,2.8vw,1.4rem);
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  /* -webkit-line-clamp: 1; */
   -webkit-box-orient: vertical;  
   overflow: hidden;
   letter-spacing: 0.05rem;
 }
 .project-heading > a{
   text-decoration: none;
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
+  color: #3c3d44;
 }
 .project-heading > a:hover{
   text-decoration: underline;
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
+  color: #3c3d44;
 }
 
 .project-heading{
@@ -184,7 +233,8 @@ h2{
     position: relative;
     font-size: 1.6vw;
     cursor: pointer;
-    color: #4a4a4a;
+    /* color: #4a4a4a; */
+    color: #3c3d44;
   }
   .icons-display .badge{
     position: absolute;
@@ -500,7 +550,8 @@ h2{
     list-style:none;
 }
 .footer-bottom{
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: space-around;
     padding: 20px 0px;
 }
 .footer-text{
