@@ -1,0 +1,180 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    overflow-x : hidden;
+    font-family: 'system-ui';
+}
+
+p {
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+}
+
+h3 {
+    font-size   : clamp(1.2rem, 2.5vw, 1.5rem);
+    color       : #3c3d44;
+    /* color    : #303030; */
+    /* color    : #4a4a4a;*/
+}
+
+.header {
+    text-align      : center;
+    /* margin       : 2rem auto; */
+    opacity         : 0;
+    padding         : 2rem;
+    padding-top     : 3rem;
+    /* background-color: #f3f3f3; */
+    background-color: #3f3d56;
+    color: #fafafb;
+    position: relative;
+}
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+.about-nav{
+    background-color: #3f3d56!important;
+}
+.about-nav > div > ul > li > a{
+    color:#fafafb!important;
+}
+.header>p {
+    font-size: 1.2rem;
+}
+
+.about-content-container * {
+    margin : 0px;
+    padding: 0px;
+}
+
+.row {
+    display        : flex;
+    justify-content: center;
+    align-self     : center;
+}
+
+.col-10 {
+    padding-left : 0px;
+    padding-right: 0px;
+}
+
+.left {
+    transform: translateX(-1000px);
+}
+
+.right {
+    transform: translateX(1000px);
+}
+
+.block-content {
+    padding        : 0px !important;
+    position       : relative;
+    display        : flex;
+    align-items    : center;
+    text-align     : justify;
+    justify-content: center;
+    padding-left   : 1rem !important;
+    z-index        : 10;
+}
+
+.block-content .block {
+    position  : absolute;
+    flex-basis: auto;
+    border    : 1px solid #9a9a9a;
+    padding   : clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.block-content p {
+    color: #5e5e5e;
+}
+
+.block-shadow {
+    position    : relative;
+    flex-basis  : auto;
+    border      : 1px solid #9a9a9a;
+    bottom      : clamp(0.9rem, 1.5vw, 1.2rem);
+    right       : clamp(0.8rem, 1.4vw, 1.1rem);
+    padding     : clamp(1rem, 1.5vw, 1.5rem);
+    /* transform: scale(0); */
+}
+
+/* .block-content .block{
+    position: absolute;
+    flex-basis: auto;
+    border: 1px solid #9a9a9a;
+    padding: 1.5rem;
+}
+.block-shadow{
+    position: relative;
+    flex-basis: auto;
+    border: 1px solid #9a9a9a;
+    padding: 1.5rem;
+    bottom: 1.2rem;
+    right: 1.1rem;
+} */
+.block-shadow>* {
+    visibility: hidden;
+}
+
+.block-content ul {
+    margin-left: 20px;
+    list-style : square;
+}
+
+.image {
+    opacity: 0;
+}
+
+.active-block-shadow {
+    animation: enter 3s linear forwards;
+}
+
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+    position: absolute;
+    color: #ffffff52;
+    font-size: 1rem!important;
+    font-weight: lighter;
+}
+.t1{    /* c++ */       top: 0; left: 10%;      }
+.t2{    /* python */    bottom: 0;              }
+.t3{    /* java */      right: 15%; top: 5%;    }
+.t4{    /* HTML */      right: 10%; top: 70%;   }
+.t5{    /* GO */        left: 0;                }
+.t6{    /* C# */        right: 30%; top: 25%;   }
+.t7{    /* Kotlin */    top: 25%;   left: 20%;  }
+.t8{    /*PHP*/         top: 0; right: 52%;     }
+.t9{    /*JavaScript*/  bottom: 0; right: 35%;  }
+.t10{   /*CSS*/         bottom: 0; right: 65%;  }
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+@keyframes enter {
+    to {
+
+        transform: scale(1) rotateX(360deg);
+    }
+}
+
+@media (max-width:768px) {
+    .block-content {
+        margin: 1.5rem !important;
+    }
+}
+
+/* [class*="gsap-marker-"] {
+left: 0px!important;
+right: 0px!important;
+} */
