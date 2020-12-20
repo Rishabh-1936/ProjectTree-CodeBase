@@ -293,3 +293,32 @@ function submit_project() {
     `
     return html;
 }
+
+document.getElementById('subscribe-button').addEventListener('click',(e)=>{
+    e.preventDefault();
+    let email = document.getElementById('subscribe-EMAIL');
+    let reg=/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    if(email.value != "" && reg.test(email.value)){
+        console.log('heelll');
+    $.ajax({
+        global   : false,
+        type     : 'POST',
+        url      : '/subscribe',
+        dataType : 'json',
+        data: {
+              email  : email.value  ,
+            },
+        success: function (result) {
+              console.log('success', result);
+        },
+        error: function (request, status, error) {
+              console.log('error', error);
+        }
+  });
+  email.value="";
+}
+else{
+    email.value="Email is not correct";
+}
+
+});
