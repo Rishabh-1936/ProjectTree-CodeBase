@@ -13,13 +13,20 @@ app.use("/public",express.static(__dirname+"/public"))
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
 
 
-
-mongoose.connect(process.env.MONGO_URL,
-    { useNewUrlParser: true, useUnifiedTopology: true }, err => {
-        console.log('database connected');
+mongoose.connect(process.env.MONGO_URL_WITH_2_2,
+    err => {
+        if(err) throw err;
+        else    console.log('database connected');
     })
+
+// mongoose.connect(process.env.MONGO_URL,
+//     err => {
+//         if(err) throw err;
+//         console.log('database connected');
+//     })
 
 
 
