@@ -504,19 +504,78 @@ h2{
   margin: 3rem 0rem;
 }
 
-@media (max-width:768px){
-  .project-view-container .loading-container,.project-view-container .project-view-embed,.project-view-info{
-    width: 80%;
-  }
-  .project-view-container h1{
-    font-size: 1.5rem;
-  }
-  .project-view-content{
-    width: 80%;
-  }
+/* -----------------------End Styling the project-view----------------------- */
+
+/* ----------------------- Styling of the Newsletter ----------------------- */
+
+.newsletters-wrap {
+  background-color: #3f3d56;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 1rem;
 }
 
-/* -----------------------End Styling the project-view----------------------- */
+.newsletters-wrap h3 {
+  margin: 0px;
+  color: #fafafb;
+}
+
+.newsletters-wrap svg {
+  width: 40px;
+  height: 40px;
+  stroke: #fafafb;
+  fill: #3f3d56;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  margin-right: .3rem;
+}
+
+#subscribe-form {
+  margin: 0;
+  display: inline-flex;
+}
+
+.screen-reader,
+.screen-reader-text {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#subscribe-EMAIL {
+  border-radius: 8px;
+  border: none;
+  padding: 0rem 0.5rem;
+  padding: .5rem 1rem;
+  margin-right: 0.5rem;
+  width: 300px;
+  outline: none;
+}
+
+#subscribe-button {
+  /* background-image: linear-gradient(to top left,#ff8a00,#e52e71)!important; */
+  background-image: linear-gradient(to left, #6c63ff, #474654) !important;
+  color: #fafafb !important;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px !important;
+  white-space: nowrap;
+  padding: 1rem 1.5rem;
+  line-height: 1.4;
+  text-align: center;
+  transition: .07s;
+  position: relative;
+  text-decoration: none !important;
+}
+
+/* ----------------------- End of Styling of the Newsletter ----------------------- */
 
 
 /* ----------------------- Styling the Footer ----------------------- */
@@ -725,3 +784,20 @@ hr.footer-style-one {
    
    }
    
+@media (max-width:768px){
+  .project-view-container .loading-container,.project-view-container .project-view-embed,.project-view-info{
+    width: 80%;
+  }
+  .project-view-container h1{
+    font-size: 1.5rem;
+  }
+  .project-view-content{
+    width: 80%;
+  }
+  .newsletters-wrap {
+    flex-direction: column;
+  }
+  .newsletters-wrap h3 {
+    margin: 1rem auto;
+  }
+}
