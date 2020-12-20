@@ -3,6 +3,8 @@ const route=express.Router();
 
 const projectModel=require('../models/projectModel');
 const projectLang=require('../models/projectLang');
+const projectcontact=require('../models/projectContactForm');
+const projectnewsletter=require('../models/projectNewsletter');
 
 route.get('/',(req,res)=>{
 
@@ -37,7 +39,6 @@ route.get('/contact',(req,res)=>{
     });
 });
 
-
 route.post('/:id/like',(req,res)=>{
     
     projectModel.findOneAndUpdate({'projectId':req.params.id},{$inc:{'likes':req.body.val}})
@@ -45,6 +46,41 @@ route.post('/:id/like',(req,res)=>{
         // console.log('Like -> ',project)
         // console.log(req.body.status)
     })
-})
+});
+
+route.post('/contactInfo',(req,res)=>{
+    let obj={
+        name:req.body.name,
+        email:req.body.email,
+        reason:req.body.reason,
+        role:req.body.role,
+        message:req.body.msg
+    }
+    projectcontact.create(new projectcontact(obj),(err,response)=>{
+        if(err){
+            console.log('Error ',err);
+        }
+        else{
+            console.log('Contact form submitted');
+        }
+    });
+});
+
+route.post('/subscribe',(req,res)=>{
+    let obj={
+        email:req.body.email
+    }
+    projectnewsletter.create(new projectcontact(obj),(err,response)=>{
+        if(err){
+            console.log('Error ',err);
+        }
+        else{
+            console.log('subscription added');
+        }
+    });
+});
+
+
+
 
 module.exports=route;
