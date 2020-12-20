@@ -1,4 +1,31 @@
 
+
+<div class="newsletters-wrap">
+    <h3>
+        <svg viewBox="0 0 40 40" width="100%" height="100%">
+            <path
+                d="M35 39H5c-2.2 0-4-1.8-4-4V19l19 9 19-9v16c0 2.2-1.8 4-4 4zM2 38l12-13M38 38L26 25M33.2 15l5.8 4M1 19l5.8-4">
+            </path>
+            <path d="M7 22V5c0-2.2 1.8-4 4-4h18c2.2 0 4 1.8 4 4v17"></path>
+            <path d="M26 13c0 3.3-2.7 6-6 6s-6-2.7-6-6"></path>
+        </svg>
+        Subscribe to the newsletter
+    </h3>
+    <div id="footer-form-wrap">
+        <form id="subscribe-form">
+            
+            <label for="subscribe-EMAIL" class="screen-reader">Email Address</label>
+            
+            <input type="email" name="EMAIL" class="required email" id="subscribe-EMAIL"
+                placeholder="loveproject@internet.cool" required="">
+            
+            <input type="submit" value="Subscribe" name="Subscribe" id="subscribe-button"
+                class="button subscribe-button">
+        </form>
+    </div>
+</div>
+
+
 <footer class="footer">
     <div class="footer-top">
         <div class="footer-about">
@@ -21,11 +48,13 @@
                         Language
                     </a>
                     <div class="dropdown-menu footer-dropdown-menu" aria-labelledby="footerDropdown">
-                        
+
                         <%projectCategory.forEach((project)=>{%>
-                            <a class="dropdown-item" href="/projects/<%= project.lang %>"><%=project.lang%></a>
-                        <%})%>
-                        
+                            <a class="dropdown-item" href="/projects/<%= project.lang %>">
+                                <%=project.lang%>
+                            </a>
+                            <%})%>
+
                     </div>
                 </li>
                 <li>Submit project</li>
@@ -55,8 +84,10 @@ crossorigin="anonymous"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-crossorigin="anonymous"></script>
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-crossorigin="anonymous"></script>
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+        
