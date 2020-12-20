@@ -211,17 +211,12 @@ right: 0px!important;
 }
 
 .contact-header-text h1 {
-    letter-spacing: -5px;
-    display       : inline;
-    margin        : 0.5rem;
-    color         : #504b97;
-    font-size     : clamp(2.5rem, 5vw, 3rem);
-}
-
-.contactUs-header {
-    color    : #3c3d44;
-    font-size: clamp(2rem, 6.5vw, 4rem);
-    position : absolute;
+    letter-spacing              : -5px;
+    display                     : inline;
+    margin                      : 0.5rem;
+    color                       : #6c63ff;
+    font-size                   : clamp(2.5rem, 5vw, 3rem);
+    -webkit-text-stroke-width   : thin;
 }
 
 svg#contact-svg {
@@ -244,8 +239,8 @@ svg#contact-svg {
 
 .contact-icons-container {
     width          : 20%;
-    background     : #6c63ffab;
-    border-left    : 5px solid #3f3d56;
+    background     : #6c63ff;
+    border-left    : 5px solid #39374e;
     display        : flex;
     flex-direction : column;
     justify-content: center;
@@ -259,7 +254,7 @@ svg#contact-svg {
     border-radius: 50%;
     position     : relative;
     right        : 4vw;
-    border       : 5px solid #3f3d56;
+    border       : 5px solid #39374e;
 }
 
 .hire-us-form {
@@ -350,7 +345,7 @@ svg#contact-svg {
 }
 
 .hire-us-form .input-box input[type="submit"] {
-    background : #2196f3;
+    background : #6c63ff;;
     color      : #fff;
     border     : none;
     max-width  : 120px;
@@ -359,7 +354,7 @@ svg#contact-svg {
 }
 
 .hire-us-form .input-box input[type="submit"]:hover {
-    background: #2195f3c0;
+    background: #9c96ff;
     color     : #fff;
 }
 
@@ -411,7 +406,7 @@ svg#contact-svg {
 
     height       : 50px;
     padding      : 0.5rem;
-    background   : #776fff;
+    background   : #6c63ff;
     border-radius: 5px;
     display      : flex;
     align-items  : center;
