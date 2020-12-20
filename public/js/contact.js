@@ -7,7 +7,7 @@ document.getElementsByTagName('nav')[0].classList.add('about-nav');
 document.getElementsByTagName('nav')[0].style.position = "sticky";
 
 
-var t1 = gsap.timeline({ defaults: { transformOrigin: "50% 50%", duration: 1.5} });
+var t1 = gsap.timeline({ defaults: { transformOrigin: "50% 50%", duration: 1.5, repeat: -1, repeatDelay: 8.5} });
 t1
       .to('#location', { scaleX: 1.3, scaleY: 1.3 })
       .to('#location', { scaleX: 1, scaleY: 1 }, ">0.1")
